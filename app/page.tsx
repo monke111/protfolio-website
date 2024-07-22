@@ -1,8 +1,13 @@
 'use client'
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import { FaEnvelope, FaInstagram, FaLinkedin, FaArrowLeft, FaTimes } from 'react-icons/fa';
 
-const PDFViewer = ({ pdfUrl, onClose } ) => (
+interface PDFViewerProps {
+  pdfUrl: string;
+  onClose: () => void;
+}
+
+const PDFViewer: FC<PDFViewerProps> = ({ pdfUrl, onClose }) => (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white p-4 rounded-lg w-full max-w-4xl h-5/6 flex flex-col">
       <div className="flex justify-end mb-2">
